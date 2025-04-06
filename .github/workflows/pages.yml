@@ -1,21 +1,16 @@
-name: Deploy GitHub Pages
+name: Deploy
 
 on:
   push:
-    branches: [ "main" ]
-  workflow_dispatch:
+    branches: [main]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4  # Version majeure mise à jour
+      - run: echo "Deploying..." > index.html  # Test minimal
+      - uses: peaceiris/actions-gh-pages@v3
         with:
-          name: site
-          path: .
-          
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v3
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
