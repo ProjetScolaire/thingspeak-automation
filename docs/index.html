@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heatmap Surveillance Algues</title>
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <style>
+        body { text-align: center; font-family: Arial; }
+        img { max-width: 90%; margin: 20px auto; display: block; }
+    </style>
+</head>
+<body>
+    <h1>Surveillance Algues</h1>
+    <img src="heatmap.png" alt="Heatmap Température/pH">
+    <p>Dernière mise à jour : <span id="date"></span></p>
+    
+    <script>
+        document.getElementById('date').textContent = new Date().toLocaleString();
+    </script>
+</body>
+</html>
